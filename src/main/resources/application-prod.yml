@@ -1,0 +1,25 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+spring:
+  redis:
+    host: redis
+  data:
+    mongodb:
+      auto-index-creation: true
+      host: mongodb
+      username: root
+      password: changeme
+      authentication-database: admin
+  cache:
+    redis:
+      time-to-live: 30000
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core: debug
