@@ -2,3 +2,18 @@ management:
   endpoint:
     health:
       show-details: always
+spring:
+  data:
+    mongodb:
+      auto-index-creation: true
+  cache:
+    redis:
+      time-to-live: 30000
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core: debug
