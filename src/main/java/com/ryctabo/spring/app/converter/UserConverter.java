@@ -2,6 +2,7 @@ package com.ryctabo.spring.app.converter;
 
 import com.ryctabo.spring.app.database.document.User;
 import com.ryctabo.spring.app.domain.UserData;
+import java.util.Optional;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,7 +19,7 @@ public class UserConverter implements DtoConverter<User, UserData, UserData> {
         user.setEmail(data.getEmail());
         user.setName(data.getName());
         user.setCreated(data.getCreated());
-        user.setEnabled(data.getEnabled());
+        user.setEnabled(Optional.ofNullable(data.getEnabled()).orElse(true));
         return user;
     }
 
